@@ -11,7 +11,7 @@ val_size: 0.1
 input_width: 448
 input_height: 224
 scaler: clahe
-num_workers: 8
+num_workers: 4
 shuffle: True
 drop_last: False
 
@@ -25,7 +25,7 @@ activation: null
 
 # Trainer
 n_epochs: 100
-batch_size: 64
+batch_size: 32
 loss: 
   name: MeanCCELoss # MeanCCELoss
   args:
