@@ -262,8 +262,8 @@ python train.py
  
 그 폴더이름을 predict_2.yaml 내부 시리얼 변수에 적어준다.
 
-- train_serial: 첫번째 학습으로 생성된 폴더이름
-- train_serial_2: 두번째 학습으로 생성된 폴더이름
+- train_serial: "첫번째 학습으로 생성된 폴더이름"
+- train_serial_2: "두번째 학습으로 생성된 폴더이름"
 
 시리얼 변수를 바꿔줌으로써 모델 2개를 사용한 앙상블 및 TTA 테스트가 준비되었다.
  
