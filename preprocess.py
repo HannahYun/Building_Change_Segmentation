@@ -1,23 +1,10 @@
-import random
 import pandas as pd
 import numpy as np
 import os
 import glob
 import cv2
 
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
-import torchvision
-from torch.utils.data import Dataset, DataLoader
-
-import matplotlib.pyplot as plt
-
 from tqdm import tqdm
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split
-from datetime import datetime
 
 import warnings
 warnings.filterwarnings(action='ignore') 
