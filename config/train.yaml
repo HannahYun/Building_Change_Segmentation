@@ -1,0 +1,56 @@
+# System
+gpu_num: 0
+seed: 42
+debug: False
+verbose: False
+
+# Train / val
+val_size: 0.1
+
+# Data Loader
+input_width: 448
+input_height: 224
+scaler: clahe
+num_workers: 8
+shuffle: True
+drop_last: False
+
+# Model
+architecture: DeepLabV3Plus
+encoder: resnext101_32x8d # timm-regnety_016
+encoder_weight: imagenet # noisy-student
+depth: 7
+n_classes: 4
+activation: null
+
+# Trainer
+n_epochs: 100
+batch_size: 64
+loss: 
+  name: MeanCCELoss # MeanCCELoss
+  args:
+    weight: [1, 1, 1, 1]
+metrics: 
+  - miou
+  - iou1
+  - iou2
+  - iou3
+earlystopping_target: val_miou
+earlystopping_patience: 10
+optimizer:
+  name: AdamW
+  args:
+    lr: 5.0e-04
+    weight_decay: 2.0e-02
+scheduler:
+  name: ExponentialLR
+  args:
+    gamma: 0.96
+
+# Logging
+plot:
+  - loss
+  - miou
+  - iou1
+  - iou2
+  - iou3
